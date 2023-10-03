@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color: rgb(105, 103, 103);
+
+  }
+.main{
+  width: 40vw;
+  height: 60vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  /* background-color: gradient; */
+  padding-top: 23px;
+  margin-top: 90px;
+  border-radius: 15px;
+  border: 2px solid gray;
+}
+h1{
+  color: rgb(252, 251, 253);
+  padding-bottom: 23px;
+}
+form{
+  margin: 12px;
+  padding-top: 23px;
+}
+input{
+  width: 20vw;
+  height: 10vh;
+  border: 2px solid rgb(43, 42, 42);
+  border-radius: 12px;
+}
+button{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(236, 234, 234) 0%, rgb(105, 247, 105) 30%, rgb(100, 232, 5) 100%);
+}
+button:hover{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(100, 232, 5) 0%, rgb(105, 247, 105) 70%, rgb(236, 234, 234) 100%);
+}
+</style>
+<body>
+  <center>
+    <div class="main">
+
+      <h1>Login</h1>
+      <hr>
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username" style="height: 40px; width: 300px; padding-left: 9px;" required><br><br>
+        <input type="password" name="password" placeholder="Password" style="height: 40px; width: 300px; padding-left: 9px;" required><br><br>
+        <button type="submit" style="height: 45px; width: 305px; border: 2px solid blueviolet; border-radius: 10px;">Login</button>
+      </form>
+      
+    </center>
+  </div>
+</body>
+</html>

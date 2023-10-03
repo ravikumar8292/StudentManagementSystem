@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Employee Management System</title>
+    <!-- <script src="details.js"></script> -->
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(71, 2, 2);
+    }
+    .tab{
+        width: 90vw;
+        margin-left: 55px;
+        margin-top: 12px;
+        border: 2px solid rgb(249, 245, 245);
+        border-radius: 5px;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+    }
+    .ho,.fo{
+        margin-left: 55px;
+        margin-top: 22px;
+        margin-right: 95px;
+        padding-bottom: 12px;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: rgb(52, 253, 253);
+
+        /* color: #fcf7f7; */
+    }
+  
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+  
+    tr:nth-child(even) {
+        background-color: #fdf7f7;
+    }
+    h1,h2{
+        color: #fcf7f7;
+    }
+    input{
+        width: 156px;
+        height: 23px;
+        border: 2px solid rgb(253, 244, 148);
+        border-radius: 3px;
+        box-shadow: inset;
+    }
+    .ho{
+        /* border: 2px solid red; */
+        /* border-radius: 5px; */
+        /* box-shadow: inset; */
+        margin-top: 83px;
+    }
+    button{
+        width: 65px;
+        height: 25px;
+        border: 2px solid gray;
+        border-radius: 2px;
+        background-color: rgb(187, 215, 146);
+        
+    }
+    button:hover{
+        background-color: rgb(121, 244, 244);
+    }
+</style>
+  
+<body>
+    <center><h1>Employee Management System</h1></center>
+    <div class="tab">
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Post</th>
+          <th>Salary</th>
+          <th>Totalworkingdays</th>
+          <th>Totalpresentdays</th>
+          <th>Delete</th>
+        </tr>
+        <% data.forEach(element => { %>
+        <tr>
+          <!-- <td><%= element.employeeId %></td>
+          <td><%= element.employeeName %></td>
+          <td><%= element.employeePost %></td>
+          <td><%= element.employeeSalary %></td>
+          <td><%= element.Totalworkingdays %></td>
+          <td><%= element.Totalpresentdays %></td> -->
+          <td>1001</td>
+          <td>Ravi kumar</td>
+          <td>HR</td>
+          <td>120000</td>
+          <td>30</td>
+          <td>23</td>
+          <td>
+                <form action="/delete" method="post">
+                  <input type="text" style="display: none;" 
+                     name="employeeId" 
+                     value="<%= element.employeeId %>">
+                  <button type="submit">Delete</button>
+                </form>
+          </td>
+        </tr>
+        <!-- <tr>
+            <td>1002</td>
+            <td>sohan datta</td>
+            <td>Manager</td>
+            <td>1200000</td>
+            <td>30</td>
+            <td>27</td>
+            <td>
+                  <form action="/delete" method="post">
+                    <input type="text" style="display: none;" 
+                       name="employeeId" 
+                       value="<%= element.employeeId %>">
+                    <button type="submit">Delete</button>
+                  </form>
+            </td>
+          
+        </tr>
+        <tr>
+            <td>1003</td>
+            <td>Rishav kumar Mishra</td>
+            <td>Employee</td>
+            <td>12000</td>
+            <td>30</td>
+            <td>28</td>
+            <td>
+                  <form action="/delete" method="post">
+                    <input type="text" style="display: none;" 
+                       name="employeeId" 
+                       value="<%= element.employeeId %>">
+                    <button type="submit">Delete</button>
+                  </form>
+            </td>
+          
+        </tr>
+        <tr>
+            <td>1004</td>
+            <td>Aditi Dhiman</td>
+            <td>HR</td>
+            <td>120000</td>
+            <td>30</td>
+            <td>23</td>
+            <td>
+                  <form action="/delete" method="post">
+                    <input type="text" style="display: none;" 
+                       name="employeeId" 
+                       value="<%= element.employeeId %>">
+                    <button type="submit">Delete</button>
+                  </form>
+            </td>
+          
+        </tr>
+        <tr>
+            <td>1005</td>
+            <td>Shubham kumar</td>
+            <td>Employee</td>
+            <td>12000</td>
+            <td>30</td>
+            <td>28</td>
+            <td>
+                  <form action="/delete" method="post">
+                    <input type="text" style="display: none;" 
+                       name="employeeId" 
+                       value="<%= element.employeeId %>">
+                    <button type="submit">Delete</button>
+                  </form>
+            </td>
+          
+        </tr> -->
+
+        <% }) %>
+  </table>
+</div>
+
+<!-- <div class="ho">
+    <h2>Add Employee</h2>
+  
+    <form action="/" method="post">
+        <input type="text" placeholder="Employee Name" 
+            name="employeeName">
+        <input type="text" placeholder="Employee Post" 
+            name="employeePost">
+        <input type="text" placeholder="Employee Salary" 
+            name="employeeSalary">
+        <input type="text" placeholder="Employee Total working days" 
+            name="Totalworkingdays">
+        <input type="text" placeholder="Employee Total present days" 
+            name="Totalpresentdays">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+  <div class="fo">
+    <h2>Update Employee</h2>
+  
+    <form action="/update" method="post">
+        <input type="text" placeholder="Employee Id" 
+            name="employeeId">
+        <input type="text" placeholder="Employee Name"
+            name="employeeName">
+        <input type="text" placeholder="Employee Post"
+            name="employeePost">
+        <input type="text" placeholder="Employee Salary"
+            name="employeeSalary">
+            <input type="text" placeholder="Employee Total working days" 
+            name="Totalworkingdays">
+        <input type="text" placeholder="Employee Total present days" 
+            name="Totalpresentdays">
+        <button type="submit">Update</button>
+    </form>
+</div> -->
+</body>
+  
+</html>
